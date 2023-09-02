@@ -195,7 +195,7 @@ function Main() {
               animate={{ transform: "scale(1)" }}
               transition={{ duration: 0.2 }}
               sx={{
-                maxWidth: 345,
+                maxWidth: 315,
                 mb: 5,
                 ":hover .MuiCardMedia-img": {
                   rotate: "2deg",
@@ -208,7 +208,7 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="green iguana"
-                height="280"
+                height="300"
                 image={item.img}
               />
               <CardContent>

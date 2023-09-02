@@ -55,7 +55,11 @@ export const ColorModeContext = createContext({
 
 export const useMode = () => {
   const [mode, setMode] = useState(
-    localStorage.getItem("mode") ? localStorage.getItem("mode") : "light"
+    localStorage.getItem("mode")
+      ? localStorage.getItem("mode")
+      : window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light"
   );
 
   const colorMode = useMemo(
