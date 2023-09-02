@@ -103,7 +103,6 @@ function Header3() {
           }}
           sx={{
             li: { width: "200px" },
-            ul: { bgcolor: theme.palette.favColor.main },
           }}
         >
           <MenuItem onClick={handleClose}>
