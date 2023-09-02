@@ -6,7 +6,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./slider.css";
 // import required modules
-import { Pagination } from "swiper/modules";
+// eslint-disable-next-line no-unused-vars
+import { Pagination, Autoplay } from "swiper/modules";
 import { ArrowForwardIosSharp } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 const slides = [
@@ -19,9 +20,13 @@ function Hero() {
     <Container sx={{ display: "flex", gap: 2 }}>
       <Swiper
         pagination={true}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         className="mySwiper"
         loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: true,
+        }}
       >
         {slides.map((sli) => {
           return (
