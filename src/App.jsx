@@ -8,27 +8,31 @@ import IconSec from "./components/hero/IconSec";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
 import ScrollToTop from "./scroll/ScrollToTop";
+import ShoppingCartProvider from "./components/context/ShoppingCartContext";
 
 function App() {
   const [theme, colorMode] = useMode();
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Header1 />
-        <Header2 />
-        <Header3 />
-        <Box bgcolor={theme.palette.bg.main}>
-          <Hero />
-          <IconSec />
-          <Main />
-          <Footer />
-        </Box>
+    <ShoppingCartProvider>
+      {" "}
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Header1 />
+          <Header2 />
+          <Header3 />
+          <Box bgcolor={theme.palette.bg.main}>
+            <Hero />
+            <IconSec />
+            <Main />
+            <Footer />
+          </Box>
 
-        <ScrollToTop />
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+          <ScrollToTop />
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </ShoppingCartProvider>
   );
 }
 

@@ -1,4 +1,5 @@
 import {
+  Close,
   ExpandLess,
   ExpandMore,
   Person2Outlined,
@@ -8,7 +9,9 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import {
+  Box,
   Container,
+  Drawer,
   IconButton,
   InputBase,
   Stack,
@@ -23,9 +26,13 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { useRef, useState } from "react";
 import { useTheme } from "@emotion/react";
+import ShoppingCartContent from "./ShoppingCartContent";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const options = ["All Categories", "Cars", "Laptops", "Phones"];
 function Header2() {
+  const { allItemsCount } = useShoppingCart();
+  console.log("counttt", allItemsCount);
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: "22px",
@@ -89,6 +96,25 @@ function Header2() {
   };
 
   const theme = useTheme();
+
+  const [state, setState] = useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
   return (
     <Container
       sx={{
@@ -181,11 +207,32 @@ function Header2() {
       </Search>
 
       <Stack alignItems="center" direction="row" gap={1}>
-        <IconButton aria-label="cart">
-          <Badge badgeContent={3} color="primary">
+        <IconButton
+          aria-label="cart"
+          onClick={toggleDrawer("right", !state["right"])}
+        >
+          <Badge badgeContent={allItemsCount} color="primary">
             <ShoppingCart />
           </Badge>
         </IconButton>
+        <Drawer
+          variant="temporary"
+          anchor={"right"}
+          open={state["right"]}
+          onClose={toggleDrawer("right", false)}
+        >
+          <Box sx={{ minWidth: "350px", pt: 2, px: 3, position: "relative" }}>
+            <IconButton
+              aria-label="cart"
+              onClick={toggleDrawer("right", false)}
+              sx={{ position: "absolute", right: 3 }}
+            >
+              <Close />
+            </IconButton>
+            <ShoppingCartContent />
+          </Box>
+        </Drawer>
+
         <IconButton>
           <Person2Outlined />
         </IconButton>

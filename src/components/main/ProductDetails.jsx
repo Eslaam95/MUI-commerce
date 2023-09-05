@@ -2,9 +2,14 @@
 import { AddShoppingCartOutlined } from "@mui/icons-material";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
-
+import { useShoppingCart } from "../context/ShoppingCartContext";
+import DeleteIcon from "@mui/icons-material/Delete";
 function ProductDetails({ ClickedProduct }) {
   const [mainImg, setMainImg] = useState(ClickedProduct.img);
+  const { addItem, getItemQuantity, decreasreItemCount, removeItem } =
+    useShoppingCart();
+
+  const qunatity = getItemQuantity(ClickedProduct.id);
   return (
     <Box
       sx={{
@@ -51,10 +56,74 @@ function ProductDetails({ ClickedProduct }) {
             );
           })}
         </Stack>
-        <Button sx={{ textTransform: "capitalise", mt: 1 }} variant="contained">
-          <AddShoppingCartOutlined sx={{ mr: 1 }} fontSize="small" />
-          Add to Cart
-        </Button>
+        {(qunatity === undefined || qunatity === 0) && (
+          <Button
+            sx={{ textTransform: "capitalise", mt: 1 }}
+            variant="contained"
+            onClick={() => {
+              addItem(ClickedProduct.id);
+            }}
+          >
+            <AddShoppingCartOutlined sx={{ mr: 1 }} fontSize="small" />
+            Add to Cart
+          </Button>
+        )}
+        {qunatity > 0 && (
+          <Stack direction={"row"} gap={1}>
+            <Button
+              sx={{
+                textTransform: "capitalise",
+
+                p: 0,
+                minWidth: "30px",
+              }}
+              variant="contained"
+              onClick={() => {
+                addItem(ClickedProduct.id);
+              }}
+            >
+              +
+            </Button>
+            <Typography
+              variant="body2"
+              textAlign={"center"}
+              width={"auto"}
+              px={2}
+            >
+              {qunatity}
+            </Typography>
+            <Button
+              sx={{
+                textTransform: "capitalise",
+
+                minWidth: "30px",
+                p: 0,
+              }}
+              variant="contained"
+              onClick={() => {
+                qunatity > 1
+                  ? decreasreItemCount(ClickedProduct.id)
+                  : removeItem(ClickedProduct.id);
+              }}
+            >
+              -
+            </Button>
+            <Button
+              sx={{
+                textTransform: "capitalise",
+
+                minWidth: "30px",
+                p: 0,
+              }}
+              variant="contained"
+              onClick={() => {
+                removeItem(ClickedProduct.id);
+              }}
+            >
+              <DeleteIcon />
+            </Button>
+          </Stack>
+        )}
       </Box>
     </Box>
   );

@@ -160,6 +160,7 @@ function Header3() {
               bgcolor: theme.palette.favColor.main,
               ".MuiDrawer-paper.MuiDrawer-paperAnchorTop": {
                 height: "100vh",
+                maxWidth: "100vw",
                 display: "flex",
                 alignItems: "center",
                 py: 15,
@@ -169,7 +170,8 @@ function Header3() {
             <Box
               className={"border"}
               sx={{
-                minWidth: "440px",
+                minWidth: "300px",
+                maxWidth: "80vw",
                 position: "relative",
                 py: 4,
               }}
@@ -193,7 +195,7 @@ function Header3() {
               <nav aria-label="secondary mailbox folders">
                 {links.map((link) => {
                   return (
-                    <>
+                    <div key={link}>
                       <Accordion
                         sx={{ bgcolor: "transparent", my: 1 }}
                         elevation={0}
@@ -217,7 +219,7 @@ function Header3() {
                           })}
                         </List>
                       </Accordion>
-                    </>
+                    </div>
                   );
                 })}
               </nav>
