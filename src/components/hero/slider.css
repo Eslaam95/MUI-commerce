@@ -23,7 +23,7 @@
   object-fit: cover;
 }
 @media all and (max-width: 600px) {
-  .swiper-slide img {
+  .heroSwiper .swiper-slide img {
     display: none;
   }
 }

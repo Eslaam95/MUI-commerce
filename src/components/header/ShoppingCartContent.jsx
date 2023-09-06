@@ -10,14 +10,15 @@ import {
 } from "@mui/material";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { useEffect, useState } from "react";
-import supabase from "../main/supbase";
+// import supabase from "../main/supbase";
 import { Close } from "@mui/icons-material";
 
 function ShoppingCartContent() {
   const { cartItems, removeItem } = useShoppingCart();
   const [sdata, setsdata] = useState([]);
   const [loadingdata, setloadingdata] = useState(true);
-  async function getItem(id) {
+
+  /*async function getItem(id) {
     setloadingdata(true);
     let { data: products, error } = await supabase
       .from("products")
@@ -28,20 +29,28 @@ function ShoppingCartContent() {
     }
     setloadingdata(false);
     return products;
-  }
+  }*/
   useEffect(
     function () {
-      cartItems.map((item) => {
-        console.log(loadingdata);
-        getItem(item.id)
-          .then((d) => {
-            setsdata((currItems) => [
-              ...currItems,
-              { ...d[0], quantity: item.quantity },
-            ]);
-          })
-          .catch((err) => err);
+      // setsdata([]);
+      // cartItems.map((item) => {
+
+      //   getItem(item.id)
+      //     .then((d) => {
+      //       setsdata((currItems) => [
+      //         ...currItems,
+      //         { ...d[0], quantity: item.quantity },
+      //       ]);
+      //     })
+      //     .catch((err) => err);
+
+      // });
+      setsdata([]);
+      setloadingdata(true);
+      cartItems.map((el) => {
+        setsdata((curr) => [...curr, el]);
       });
+      setloadingdata(false);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [cartItems]
@@ -49,7 +58,7 @@ function ShoppingCartContent() {
 
   const TotalPrice = sdata.reduce((a, s) => {
     a += s.price * s.quantity;
-    return a;
+    return parseFloat(a).toFixed(2);
   }, 0);
   if (!cartItems.length) {
     return (
@@ -122,7 +131,7 @@ function ShoppingCartContent() {
                   }}
                 >
                   <Typography component="div" variant="body2">
-                    ${item.price * item.quantity}
+                    ${parseFloat(item.price * item.quantity).toFixed(2)}
                   </Typography>
                   <IconButton onClick={() => removeItem(item.id)}>
                     <Close />

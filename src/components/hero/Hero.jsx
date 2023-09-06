@@ -21,7 +21,7 @@ function Hero() {
       <Swiper
         pagination={true}
         modules={[Pagination, Autoplay]}
-        className="mySwiper"
+        className="heroSwiper"
         loop={true}
         autoplay={{
           delay: 3000,

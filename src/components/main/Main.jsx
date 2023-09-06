@@ -24,6 +24,7 @@ import Dialog from "@mui/material/Dialog";
 import { Close } from "@mui/icons-material";
 import ProductDetails from "./ProductDetails";
 import { motion } from "framer-motion";
+import Featuredproducts from "./Featuredproducts";
 
 function Main() {
   const [loading, setloading] = useState(true);
@@ -35,20 +36,38 @@ function Main() {
   const womenProducts = false;
   // eslint-disable-next-line no-unused-vars
   const [poductFilter, setproductFilter] = useState(allProducts);
+  const [allpros, setallpros] = useState([]);
   const [pros, setpros] = useState([]);
   const [ClickedProduct, setClickedProduct] = useState({});
-  async function getCabins(filter) {
-    setpros([]);
+
+  async function setproducts() {
+    setloading(true);
+    let { data: products, error } = await supabase.from("products").select("*");
+    setpros(products);
+    setallpros(products);
+    if (error) {
+      setfetcherror(error.message);
+    }
+    setloading(false);
+  }
+  function filterProducts(filter) {
     setloading(true);
     if (filter === "all") {
-      let { data: products, error } = await supabase
-        .from("products")
-        .select("*");
-
-      setpros(products);
-      if (error) {
-        setfetcherror(error.message);
-      }
+      setpros(allpros);
+    } else if (filter === true) {
+      const men = allpros.filter((item) => item.men === true);
+      setpros(men);
+    } else if (filter === false) {
+      const women = allpros.filter((item) => item.men === false);
+      setpros(women);
+    }
+    setloading(false);
+  }
+  /*
+  async function getproducts(filter) {
+    setloading(true);
+    if (filter === "all") {
+      setpros(allpros);
     } else if (filter === true) {
       let { data: products, error } = await supabase
         .from("products")
@@ -71,10 +90,15 @@ function Main() {
     }
     setloading(false);
   }
+  */
+  useEffect(function () {
+    setproducts();
+  }, []);
   useEffect(
     function () {
       //load
-      getCabins(poductFilter);
+
+      filterProducts(poductFilter);
       //end load
     },
     [poductFilter]
@@ -116,6 +140,7 @@ function Main() {
   }
   return (
     <Container sx={{ my: 10, pb: 10 }}>
+      <Featuredproducts pros={allpros} />
       <Stack
         direction={"row"}
         justifyContent={"space-between"}
@@ -197,9 +222,11 @@ function Main() {
               sx={{
                 maxWidth: 315,
                 mb: 5,
+                " .MuiCardMedia-img": {
+                  transition: "all 0.2s  ease-in-out",
+                },
                 ":hover .MuiCardMedia-img": {
                   rotate: "2deg",
-                  transition: ".2s",
                   scale: "1.05",
                 },
               }}
