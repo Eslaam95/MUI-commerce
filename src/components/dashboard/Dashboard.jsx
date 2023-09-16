@@ -506,7 +506,10 @@ function Dashboard() {
                 display="flex"
               >
                 <Box>
-                  <Link href="/" color={theme.palette.text.primary}>
+                  <Link
+                    color={theme.palette.text.primary}
+                    onClick={() => navigate("/")}
+                  >
                     <ShoppingCart />
                   </Link>
                 </Box>
