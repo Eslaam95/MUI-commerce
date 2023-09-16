@@ -436,7 +436,7 @@ function DashboardStats() {
                   sx={{ fontSize: "110%", transform: "rotate(-90deg)" }}
                 />
                 <Typography variant="subtitle2" fontSize={"70%"}>
-                  1350%
+                  13,50%
                 </Typography>
               </Box>
             </Box>
