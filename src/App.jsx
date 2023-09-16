@@ -8,6 +8,7 @@ import IconSec from "./components/hero/IconSec";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
 import ScrollToTop from "./scroll/ScrollToTop";
+import FloatingCart from "./components/main/FloatingCart";
 import ShoppingCartProvider from "./components/context/ShoppingCartContext";
 import { SnackbarProvider } from "notistack";
 
@@ -32,6 +33,7 @@ function App() {
             </Box>
 
             <ScrollToTop />
+            <FloatingCart />
           </ThemeProvider>
         </ColorModeContext.Provider>
       </ShoppingCartProvider>

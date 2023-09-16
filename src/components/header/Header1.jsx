@@ -60,7 +60,7 @@ function Header1() {
                 }}
                 color="inherit"
               >
-                <LightModeOutlined fontSize="small" sx={{ color: "#fff" }} />
+                <DarkModeOutlined fontSize="small" sx={{ color: "#fff" }} />
               </IconButton>
             ) : (
               <IconButton
@@ -73,7 +73,7 @@ function Header1() {
                 }}
                 color="inherit"
               >
-                <DarkModeOutlined fontSize="small" sx={{ color: "#fff" }} />
+                <LightModeOutlined fontSize="small" sx={{ color: "#fff" }} />
               </IconButton>
             )}
           </div>

@@ -11,8 +11,10 @@ import {
   ListItemButton,
   Paper,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Links({ title, right = false }) {
+  const navigate = useNavigate();
   const directionLink = right === true ? "-100%" : "100%";
   return (
     <Box
@@ -43,8 +45,8 @@ function Links({ title, right = false }) {
           <nav aria-label="secondary mailbox folders">
             <List>
               <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemText primary="Link" />
+                <ListItemButton onClick={() => navigate("/dashboard")}>
+                  <ListItemText primary="Sales" />
                 </ListItemButton>
               </ListItem>
               <ListItem
@@ -56,8 +58,8 @@ function Links({ title, right = false }) {
                   ":hover .show-hover-sub": { display: "block" },
                 }}
               >
-                <ListItemButton>
-                  <ListItemText primary="Link" />
+                <ListItemButton onClick={() => navigate("/dashboard")}>
+                  <ListItemText primary="Products" />
                   <KeyboardArrowRightIcon />
                 </ListItemButton>
 
@@ -76,14 +78,14 @@ function Links({ title, right = false }) {
                   <Paper>
                     <List>
                       <ListItem disablePadding>
-                        <ListItemButton>
-                          <ListItemText primary="Link" />
+                        <ListItemButton onClick={() => navigate("/dashboard")}>
+                          <ListItemText primary="Orders" />
                         </ListItemButton>
                       </ListItem>
 
                       <ListItem disablePadding>
-                        <ListItemButton component="a" href="#simple-list">
-                          <ListItemText primary="Link" />
+                        <ListItemButton onClick={() => navigate("/dashboard")}>
+                          <ListItemText primary="Stats" />
                         </ListItemButton>
                       </ListItem>
                     </List>
@@ -91,8 +93,8 @@ function Links({ title, right = false }) {
                 </Box>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
-                  <ListItemText primary="Link" />
+                <ListItemButton onClick={() => navigate("/dashboard")}>
+                  <ListItemText primary="Settings" />
                 </ListItemButton>
               </ListItem>
             </List>

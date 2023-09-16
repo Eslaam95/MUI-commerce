@@ -25,6 +25,7 @@ import { Close } from "@mui/icons-material";
 import ProductDetails from "./ProductDetails";
 import { motion } from "framer-motion";
 import Featuredproducts from "./Featuredproducts";
+import Offers from "../offer/Offers";
 
 function Main() {
   const [loading, setloading] = useState(true);
@@ -139,8 +140,9 @@ function Main() {
     );
   }
   return (
-    <Container sx={{ my: 10, pb: 10 }}>
+    <Container sx={{ my: 8, pb: 3 }}>
       <Featuredproducts pros={allpros} />
+      <Offers />
       <Stack
         direction={"row"}
         justifyContent={"space-between"}

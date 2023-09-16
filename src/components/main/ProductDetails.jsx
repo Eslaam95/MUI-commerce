@@ -18,12 +18,23 @@ function ProductDetails({ ClickedProduct }) {
           alignItems: "center",
           gap: 1,
           flexDirection: { xs: "column", md: "row" },
+          py: { xs: 3, md: 0 },
         }}
       >
-        <Box sx={{ display: "flex", width: { xs: 150, md: 700 } }}>
+        <Box
+          sx={{
+            display: "flex",
+            width: { xs: 150, md: 700 },
+            height: { md: "100%" },
+            bgcolor: { md: "#fff" },
+            py: { md: 5 },
+          }}
+        >
           <img src={mainImg} alt="" width={"100%"} height={"100%"} />
         </Box>
-        <Box sx={{ p: 2, textAlign: { xs: "center", md: "left" } }}>
+        <Box
+          sx={{ px: 2, py: { md: 6 }, textAlign: { xs: "center", md: "left" } }}
+        >
           <Typography variant="body2">
             {ClickedProduct.men === true ? "MEN" : "WOMEN"} FASHION
           </Typography>
@@ -45,6 +56,7 @@ function ProductDetails({ ClickedProduct }) {
                     cursor: "pointer",
                     borderRadius: 3,
                     opacity: mainImg === imgSrc ? 1 : 0.7,
+                    background: "#121212",
                   }}
                   src={imgSrc}
                   alt=""

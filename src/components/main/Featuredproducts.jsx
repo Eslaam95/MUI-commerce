@@ -41,25 +41,40 @@ function Featuredproducts({ pros }) {
   return (
     <Box
       sx={{
-        mb: 15,
+        mb: 5,
         " .swiper-button-next": {
           right: 0,
           py: "7px",
-          pl: "8px",
-          bgcolor: "#000",
+          pl: "6px",
+          pr: "4px",
+          bgcolor: "#222",
         },
-        " .swiper-button-next::after": { fontSize: "17px", fontWeight: "bold" },
+        " .swiper-button-next::after": {
+          fontSize: "17px",
+          fontWeight: "bold",
+          color: "#fff",
+        },
         " .swiper-button-prev": {
           zIndex: 9999,
           left: 0,
           py: "7px",
-          pr: "8px",
-          bgcolor: "#000",
+          pr: "6px",
+          pl: "4px",
+          bgcolor: "#222",
         },
-        " .swiper-button-prev::after": { fontSize: "17px", fontWeight: "bold" },
+        " .swiper-button-prev::after": {
+          fontSize: "17px",
+          fontWeight: "bold",
+          color: "#fff",
+        },
         " .swiper-button-disabled": {
           opacity: 1,
           bgcolor: theme.palette.favColor.main,
+          pointerEvents: "auto",
+        },
+        " .swiper-button-disabled:after": {
+          color: "#121212",
+          opacity: 0.45,
         },
       }}
     >
@@ -72,21 +87,24 @@ function Featuredproducts({ pros }) {
       <Swiper
         modules={[Navigation, A11y]}
         spaceBetween={50}
-        slidesPerView={4}
+        slidesPerView={5}
         navigation
         className="mySwiper"
         breakpoints={{
           320: {
             slidesPerView: 1,
           },
-          640: {
+          480: {
             slidesPerView: 2,
           },
-          850: {
+          640: {
             slidesPerView: 3,
           },
-          1024: {
+          850: {
             slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 5,
           },
         }}
       >

@@ -27,7 +27,9 @@ import { useState } from "react";
 import { useTheme } from "@emotion/react";
 import { Close, MenuOutlined } from "@mui/icons-material";
 import Links from "./Links";
+import { useNavigate } from "react-router-dom";
 function Header3() {
+  const navigate = useNavigate();
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -211,7 +213,9 @@ function Header3() {
                           {link.subLinks.map((subLin) => {
                             return (
                               <ListItem sx={{ py: 0 }} key={subLin}>
-                                <ListItemButton>
+                                <ListItemButton
+                                  onClick={() => navigate("/dashboard")}
+                                >
                                   <ListItemText primary={subLin} />
                                 </ListItemButton>
                               </ListItem>
