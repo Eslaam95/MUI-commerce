@@ -65,7 +65,7 @@ function DashboardStats() {
   };
   const HalfBoxtyle = {
     flexBasis: "23%",
-    maxWidth: "100%",
+    maxWidth: "480px",
     flexGrow: 1,
     px: 2,
     pt: 2,
@@ -123,6 +123,16 @@ function DashboardStats() {
           hollow: {
             size: "60%",
           },
+          dataLabels: {
+            show: true,
+
+            name: {
+              show: true,
+              fontSize: "15px",
+
+              offsetY: 3,
+            },
+          },
         },
       },
       labels: ["75%"],
@@ -139,11 +149,15 @@ function DashboardStats() {
         radialBar: {
           dataLabels: {
             name: {
-              fontSize: "10px",
+              show: true,
+              fontSize: "2px",
+              fontWeight: "normal",
+              offsetY: 4,
             },
             value: {
               show: false,
-              fontSize: "10px",
+              fontSize: "2px",
+              offsetY: 4,
             },
             total: {
               show: true,
@@ -647,7 +661,7 @@ function DashboardStats() {
               display: "flex",
               alignItems: "flex-end",
               justifyContent: "flex-end",
-              mb: 1.5,
+              mb: 2,
               " text.apexcharts-datalabel-value": {
                 display: "none",
               },
@@ -807,7 +821,7 @@ function DashboardStats() {
         }}
       >
         <Typography variant="h6" sx={{ my: 2.5 }}>
-          Analytics
+          Analytics:
         </Typography>
         <ReactApexChart
           options={colSt.options}
@@ -826,14 +840,14 @@ function DashboardStats() {
         }}
       >
         <Typography variant="h6" sx={{ my: 2.5 }}>
-          Recent Purchases
+          Recent Purchases:
         </Typography>
         <DataGrid
           sx={{
             " .MuiDataGrid-cell[data-field='payment'] .MuiDataGrid-cellContent":
               {
                 bgcolor: theme.palette.favColor.main,
-                p: " 4px 8px",
+                p: " 4px 10px",
                 borderRadius: "20px",
               },
             " .MuiDataGrid-cellContent[title='Pending']": {

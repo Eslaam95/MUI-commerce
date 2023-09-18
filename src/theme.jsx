@@ -26,8 +26,12 @@ export const getDesignTokens = (mode) => ({
           favColor: {
             main: grey[300],
           },
+          DashboardBg: {
+            main: "#f9fafb",
+          },
           customCard: {
-            main: "#eee",
+            /* main: "#f9fafb",*/
+            main: "#fff",
           },
           customCardSubtitle: {
             main: "#5f5f5f",
@@ -51,8 +55,12 @@ export const getDesignTokens = (mode) => ({
           text: {
             primary: "#fff",
           },
+          DashboardBg: {
+            main: "#111827",
+          },
           customCard: {
-            main: "#494949",
+            // main: "#494949",
+            main: "#18212f",
           },
           customCardSubtitle: {
             main: "#dfdfdf",

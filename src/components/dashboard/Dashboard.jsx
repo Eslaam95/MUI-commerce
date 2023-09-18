@@ -96,6 +96,7 @@ const Drawer = styled(MuiDrawer, {
   width: drawerWidth,
   flexShrink: 0,
   whiteSpace: "nowrap",
+  bgcolor: theme.palette.customCard.main,
   boxSizing: "border-box",
   ...(open && {
     ...openedMixin(theme),
@@ -187,20 +188,29 @@ function Dashboard() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box bgcolor={theme.palette.bg.main} sx={{ minHeight: "100vh" }}>
+        <Box
+          bgcolor={theme.palette.DashboardBg.main}
+          sx={{ minHeight: "100vh" }}
+        >
           <Box
             sx={{ pl: useMediaQuery("(min-width:640px)") ? "80px" : "55px" }}
           >
             <AppBar
               position="fixed"
               open={open}
-              sx={{ bgcolor: "#2B3445", " *": { color: "#fff" } }}
+              sx={{
+                bgcolor: theme.palette.customCard.main,
+                boxShadow: "none",
+                borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+                " *": { color: theme.palette.text.primary },
+              }}
             >
               <Toolbar
                 sx={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
+                  bgcolor: theme.palette.customCard.main,
                 }}
               >
                 <Box display={"flex"} alignItems={"center"}>
@@ -285,6 +295,7 @@ function Dashboard() {
                         px: 2,
                         pt: 2,
                         pb: 0,
+                        bgcolor: theme.palette.customCard.main,
                       }}
                     >
                       <Box sx={{ pb: 1 }}>
@@ -500,18 +511,24 @@ function Dashboard() {
                 </Box>
               </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open}>
+            <Drawer
+              variant="permanent"
+              open={open}
+              sx={{
+                " .MuiPaper-root": { bgcolor: theme.palette.customCard.main },
+              }}
+            >
               <DrawerHeader
                 sx={{ justifyContent: "space-between !important", pl: "20px" }}
                 display="flex"
               >
                 <Box>
-                  <Link
+                  <IconButton
                     color={theme.palette.text.primary}
                     onClick={() => navigate("/")}
                   >
                     <ShoppingCart />
-                  </Link>
+                  </IconButton>
                 </Box>
                 <IconButton onClick={handleDrawerClose}>
                   {theme.direction === "rtl" ? (
@@ -536,6 +553,7 @@ function Dashboard() {
                           justifyContent: open ? "initial" : "center",
                           px: 2.5,
                         }}
+                        onClick={() => handleDrawerClose()}
                       >
                         <ListItemIcon
                           sx={{
@@ -573,6 +591,7 @@ function Dashboard() {
                         justifyContent: open ? "initial" : "center",
                         px: 2.5,
                       }}
+                      onClick={() => handleDrawerClose()}
                     >
                       <ListItemIcon
                         sx={{
