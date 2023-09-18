@@ -509,6 +509,7 @@ function Dashboard() {
                         textAlign: "center",
                         display: "inline-block",
                         bgcolor: theme.palette.customCard.main,
+                        color: theme.palette.text.primary,
                       }}
                     >
                       See All
