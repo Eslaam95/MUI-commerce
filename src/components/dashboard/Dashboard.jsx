@@ -388,7 +388,12 @@ function Dashboard() {
                       horizontal: "left",
                     }}
                   >
-                    <Box sx={{ width: "100%" }}>
+                    <Box
+                      sx={{
+                        width: "100%",
+                        bgcolor: theme.palette.customCard.main,
+                      }}
+                    >
                       <Box
                         sx={{
                           borderBottom: 1,
