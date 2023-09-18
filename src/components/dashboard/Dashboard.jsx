@@ -508,6 +508,7 @@ function Dashboard() {
                         width: "100%",
                         textAlign: "center",
                         display: "inline-block",
+                        bgcolor: theme.palette.customCard.main,
                       }}
                     >
                       See All
