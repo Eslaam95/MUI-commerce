@@ -42,7 +42,7 @@ http://localhost:3000
 Folder Structure
 Describe the organization of the project's folders and files. Highlight any important directories or files.
 
-```axapta
+```
 Copy
 ├── src                   # Source files
 │   ├── components        # React components
