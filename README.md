@@ -12,14 +12,12 @@
 - Installation
 - Usage
 - Folder Structure
-- Contributing
-- License
 
 ## Key Features
 - Light/Dark mode.  
-- Functional shopping cart.
-- User management.
-- Intuitive dashboard.
+- Functional Shopping Cart.
+- User Management.
+- Intuitive Dashboard.
 - User-friendly Design.
 
 ## Installation
