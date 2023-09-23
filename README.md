@@ -19,11 +19,11 @@ Provide a brief overview of the project, its purpose, and any key features.
 Installation
 List the steps required to set up and install the project locally. Include any dependencies that need to be installed.
 
-bash
+```bash
 Copy
 # Clone the repository
 git clone https://github.com/your-username/project-name.git
-
+```
 # Navigate to the project directory
 cd project-name
 
