@@ -42,7 +42,7 @@ http://localhost:3000
 Folder Structure
 Describe the organization of the project's folders and files. Highlight any important directories or files.
 
-axapta
+```axapta
 Copy
 ├── src                   # Source files
 │   ├── components        # React components
@@ -54,6 +54,7 @@ Copy
 ├── .gitignore            # Git ignore rules
 ├── package.json          # Project dependencies and scripts
 └── README.md             # Project readme file
+```
 Contributing
 Explain how others can contribute to your project. Include guidelines for submitting pull requests or raising issues.
 
