@@ -32,13 +32,14 @@ npm install
 Usage
 Explain how to run and use the project. Include any relevant commands and examples.
 
-bash
-Copy
+```bash
 # Start the development server
 npm start
 
 # Open a web browser and navigate to the following URL
 http://localhost:3000
+```
+
 Folder Structure
 Describe the organization of the project's folders and files. Highlight any important directories or files.
 
