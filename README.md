@@ -1,12 +1,12 @@
-## MUI Commerce website
-
-Demo:  
-
-[https://mui-commerce.netlify.app/](https://mui-commerce.netlify.app/)
 ## Project Name
 Short project description.
 
-##Table of Contents
+## Demo:  
+
+[https://mui-commerce.netlify.app/](https://mui-commerce.netlify.app/)
+
+
+## Table of Contents
 - Project Overview
 - Installation
 - Usage
