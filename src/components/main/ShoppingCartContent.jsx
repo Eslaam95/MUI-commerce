@@ -17,7 +17,7 @@ function ShoppingCartContent() {
   const { cartItems, removeItem } = useShoppingCart();
   const [sdata, setsdata] = useState([]);
   const [loadingdata, setloadingdata] = useState(true);
-
+  const [totalPrice, setTotalPrice] = useState(0);
   /*async function getItem(id) {
     setloadingdata(true);
     let { data: products, error } = await supabase
@@ -51,15 +51,16 @@ function ShoppingCartContent() {
         setsdata((curr) => [...curr, el]);
       });
       setloadingdata(false);
+      const prePrice = cartItems.reduce((a, s) => {
+        a += s.price * s.quantity;
+        return parseFloat(a);
+      }, 0);
+      setTotalPrice(prePrice.toFixed(2));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [cartItems]
   );
 
-  const TotalPrice = sdata.reduce((a, s) => {
-    a += s.price * s.quantity;
-    return parseFloat(a).toFixed(2);
-  }, 0);
   if (!cartItems.length) {
     return (
       <Stack sx={{ pt: 5 }}>
@@ -143,7 +144,7 @@ function ShoppingCartContent() {
         );
       })}
 
-      <Typography textAlign={"right"}>Total Price: ${TotalPrice}</Typography>
+      <Typography textAlign={"right"}>Total Price: ${totalPrice}</Typography>
     </Stack>
   );
 }
