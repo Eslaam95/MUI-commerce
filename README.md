@@ -75,9 +75,8 @@ MUI-commerce
 ## Skills
 
 - React.Js
-- Suppbase 
+- Supabase 
 -  MUI 
--  Swiper
--  slider 
+-  Swiper Slider 
 -  Apex Charts 
 -  Framer Motion
