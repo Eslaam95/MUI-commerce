@@ -4,6 +4,8 @@
 
 [https://mui-commerce.netlify.app/](https://mui-commerce.netlify.app/)
 
+[https://mui-commerce.netlify.app/dashboard](https://mui-commerce.netlify.app/dashboard)
+
 
 ## Table of Contents
 - Key Features
