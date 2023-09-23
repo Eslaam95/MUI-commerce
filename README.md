@@ -12,7 +12,7 @@
 - Installation
 - Usage
 - Folder Structure
-- - Skills
+- Skills
 
 ## Key Features
 - Light/Dark mode.  
