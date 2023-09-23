@@ -1,5 +1,4 @@
-## Project Name
-Short project description.
+## MUI commerce website
 
 ## Demo:  
 
@@ -7,25 +6,29 @@ Short project description.
 
 
 ## Table of Contents
-- Project Overview
+- Key Features
 - Installation
 - Usage
 - Folder Structure
 - Contributing
 - License
 
-## Project Overview
-Provide a brief overview of the project, its purpose, and any key features.
+## Key Features
+- Light/Dark mode.  
+- Functional shopping cart.
+- User management.
+- Intuitive dashboard.
+- User-friendly Design.
 
 ## Installation
-List the steps required to set up and install the project locally. Include any dependencies that need to be installed.
+List of the steps required to set up and install the project locally.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/project-name.git
+git clone https://github.com/Eslaam95/MUI-commerce.git
 
 # Navigate to the project directory
-cd project-name
+cd MUI-commerce
 
 # Install dependencies
 npm install
@@ -36,32 +39,35 @@ Explain how to run and use the project. Include any relevant commands and exampl
 
 ```bash
 # Start the development server
-npm start
+npm run dev
 
 # Open a web browser and navigate to the following URL
-http://localhost:3000
+# make sure of the localhost port number
+http://localhost:5173/
 ```
 
 ## Folder Structure
-Describe the organization of the project's folders and files. Highlight any important directories or files.
 
 ```
-Copy
+MUI-commerce
 ├── src                   # Source files
 │   ├── components        # React components
-│   ├── pages             # Application pages
-│   ├── services          # API services and utilities
-│   ├── styles            # CSS stylesheets
-│   └── index.js          # Entry point
+│       ├── context          # Shopping cart context
+│       ├── dashboard        # Dashboard components
+│       ├── footer           # Footer components
+│       ├── header           # Header components
+│       ├── hero             # Hero section components
+│       ├── main             # Main section components
+│       └── signup           # Signup page
+│   ├── index.css          #Gloabal styles
+│   ├── theme.jsx          # MUI theme settings
+│   ├── components         # React components
+│   └── main.js            # Entry point
 ├── public                # Public assets
+├── index.html            # Index file
 ├── .gitignore            # Git ignore rules
+├── vite.config.js        # Vite configurations
 ├── package.json          # Project dependencies and scripts
 └── README.md             # Project readme file
 ```
-## Contributing
-Explain how others can contribute to your project. Include guidelines for submitting pull requests or raising issues.
 
-## License
-Specify the license under which the project is distributed. For example:
-
-This project is licensed under the MIT License.
