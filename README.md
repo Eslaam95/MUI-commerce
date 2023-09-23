@@ -7,28 +7,28 @@ Project Name
 Short project description.
 
 Table of Contents
-Project Overview
-Installation
-Usage
-Folder Structure
-Contributing
-License
-Project Overview
+- Project Overview
+- Installation
+- Usage
+- Folder Structure
+- Contributing
+- License
+- Project Overview
 Provide a brief overview of the project, its purpose, and any key features.
 
 Installation
 List the steps required to set up and install the project locally. Include any dependencies that need to be installed.
 
 ```bash
-Copy
 # Clone the repository
 git clone https://github.com/your-username/project-name.git
-```
+
 # Navigate to the project directory
 cd project-name
 
 # Install dependencies
 npm install
+```
 Usage
 Explain how to run and use the project. Include any relevant commands and examples.
 
