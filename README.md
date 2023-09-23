@@ -53,7 +53,7 @@ http://localhost:5173/
 ```
 MUI-commerce
 ├── src                   # Source files
-│   ├── components        # React components
+│   ├── components         # React components
 │       ├── context          # Shopping cart context
 │       ├── dashboard        # Dashboard components
 │       ├── footer           # Footer components
