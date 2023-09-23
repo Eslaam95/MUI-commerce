@@ -12,6 +12,7 @@
 - Installation
 - Usage
 - Folder Structure
+- - Skills
 
 ## Key Features
 - Light/Dark mode.  
@@ -71,3 +72,12 @@ MUI-commerce
 └── README.md             # Project readme file
 ```
 
+## Skills
+
+- React.Js
+- Suppbase 
+-  MUI 
+-  Swiper
+-  slider 
+-  Apex Charts 
+-  Framer Motion
